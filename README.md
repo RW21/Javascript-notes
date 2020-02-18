@@ -17,6 +17,12 @@
 if (a == 1) return 1
 ```
 
+### loops
+
+```javascript
+["A", "B"].forEach(l => console.log(l));
+```
+
 ## Logical operators
 
 ```javascript
@@ -63,7 +69,38 @@ console.log(twice(5));
 // → 10
 ```
 
+### Rest parameter
+
+```javascript
+function max(...numbers) {
+let result = -Infinity;
+for (let number of numbers) {
+     if (number > result) result = number;
+   }
+   return result;
+ }
+console.log(max(4, 1, 9, -2)); // → 9
+```
+
+### Binding
+
+```javascript
+
+function phi(table) {
+return (table[3] * table[0] - table[2] * table[1]) /
+Math.sqrt((table[2] + table[3]) * (table[0] + table[1]) * (table[1] + table[3]) * (table[0] + table[2]));
+}
+
+// Use bindings
+
+function phi([n00, n01, n10, n11]) { return (n11 * n00 - n10 * n01) /
+Math.sqrt((n10 + n11) * (n00 + n01) * (n01 + n11) * (n00 + n10));
+}
+```
+
 ## Data structures
+
+Numbers, strings, and Booleans, are all immutable. Objects are mutable.
 
 ### Object
 
@@ -73,6 +110,9 @@ x: 1,
 "touched tree": "Touched a tree"
 };
 
+// Add key
+descriptions.potato = 4
+
 Object.keys(descriptions)
 
 let objectA = {a: 1, b: 2};
@@ -81,3 +121,10 @@ console.log(objectA);
 // → {a: 1, b: 3, c: 4}
 ```
 
+### Strings
+
+- `trim()`
+- `indexOf()`
+- `join()`
+- `split()`
+- 
