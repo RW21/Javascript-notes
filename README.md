@@ -1,5 +1,22 @@
 # Basics
 
+## Functional
+
+Composing pure functions, avoiding shared state, mutable data, and side-effects. FP is declarative rather than imperative, and application state flows through pure functions.
+
+```javascript
+script_a = {living : true}
+
+["A", "B"].forEach(l => console.log(l));
+
+filter(scripts, script => script.living)
+
+map(rtlScripts, s => s.name)
+
+// Parameters: combining function and a start value
+reduce([1, 2, 3, 4], (a, b) => a + b, 0)
+```
+
 ## String
 
 - Template literals
@@ -127,4 +144,29 @@ console.log(objectA);
 - `indexOf()`
 - `join()`
 - `split()`
-- 
+
+# Functional programming
+
+## Currying
+
+```javascript
+const add = x => (y) => x + y
+const add1 = add(1)
+
+add1(3)
+// 4
+```
+
+## Ramda
+
+- `complement()`
+- `both()`
+- `either()`
+- `pipe()`
+  
+### Arguments
+
+- `curry()`
+- `flip()`
+- Placeholder `__`
+    - Only works for curried functions.
