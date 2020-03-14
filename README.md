@@ -147,10 +147,14 @@ console.log(objectA);
 
 # Functional programming
 
+Imperative programming is based on control flow. Declarative programming is a style of programming where the programmers tell the computer what to do by telling it what they want.
+
 ## Currying
 
 ```javascript
 const add = x => (y) => x + y
+// Rambda
+// const add = curry((x, y) => x + y)
 const add1 = add(1)
 
 add1(3)
@@ -164,9 +168,24 @@ add1(3)
 - `either()`
 - `pipe()`
   
-### Arguments
+### Functions
 
 - `curry()`
 - `flip()`
 - Placeholder `__`
     - Only works for curried functions.
+
+### Special placeholder
+
+If g is a curried ternary function and _ is R.__, the following are equivalent:
+
+```javascript
+    g(1, 2, 3)
+    g(_, 2, 3)(1)
+    g(_, _, 3)(1)(2)
+    g(_, _, 3)(1, 2)
+    g(_, 2, _)(1, 3)
+    g(_, 2)(1)(3)
+    g(_, 2)(1, 3)
+    g(_, 2)(_, 3)(1)
+```
